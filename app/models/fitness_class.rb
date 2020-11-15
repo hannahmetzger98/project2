@@ -1,0 +1,2 @@
+class FitnessClass < ApplicationRecord
+end

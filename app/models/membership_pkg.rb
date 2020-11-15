@@ -1,0 +1,2 @@
+class MembershipPkg < ApplicationRecord
+end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @membership_pkg.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @membership_pkg.price %>
+</p>
+
+<p>
+  <strong>Amenities:</strong>
+  <%= @membership_pkg.amenities %>
+</p>
+
+<%= link_to 'Edit', edit_membership_pkg_path(@membership_pkg) %> |
+<%= link_to 'Back', membership_pkgs_path %>
