@@ -15,6 +15,13 @@ class MembershipPkgsController < ApplicationController
   # GET /membership_pkgs/new
   def new
     @membership_pkg = MembershipPkg.new
+    # @membershipOptions = {}
+    # membership_pkg = MembershipPkg.all
+    # if membership_pkg
+    #   membership_pkg.each do |u|
+    #     @membershipOptions[u.name] = u.id
+    #   end
+    # end
   end
 
   # GET /membership_pkgs/1/edit

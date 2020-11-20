@@ -8,17 +8,17 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- render 'layouts/shim'%>-->
 
   </head>
 
   <body>
 <%= render 'layouts/header' %>
   <div class= "container">
-    <br />  <br />  <br />  <br />  <br /> 
+    <br />  <br />  <br />  <br />  <br /> <br />  
     <%= yield %>
     </div>
     
+    <br /><br /><br /><br />
     <%= render 'layouts/footer' %>
   </body>
 </html>

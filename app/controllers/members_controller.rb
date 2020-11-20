@@ -15,6 +15,13 @@ class MembersController < ApplicationController
   # GET /members/new
   def new
     @member = Member.new
+    @options = {}
+    member = Member.all
+    if member 
+      member.each do |u|
+        @options[u.name] = u.id
+      end
+    end
   end
 
   # GET /members/1/edit
@@ -69,6 +76,6 @@ class MembersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def member_params
-      params.require(:member).permit(:name, :email, :phone)
+      params.require(:member).permit(:name, :email, :phone, :membershipType, :paymentDue, :classesEnrolled)
     end
 end

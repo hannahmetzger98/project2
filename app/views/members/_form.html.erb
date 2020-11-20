@@ -1,3 +1,4 @@
+<% provide(:title, "New Member Form") %>
 <%= form_with(model: member, local: true) do |form| %>
   <% if member.errors.any? %>
     <div id="error_explanation">
@@ -14,6 +15,7 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
+
   </div>
 
   <div class="field">
@@ -25,8 +27,25 @@
     <%= form.label :phone %>
     <%= form.text_field :phone %>
   </div>
+  
+  <div class="field">
+    <%= form.label "Membership Type (choose between Basic, Deluxe, Premium,or a Class Pass)" %>
+    <%= form.text_field :membershipType %>
+  </div>
+  
+  <div class="field">
+    <%= form.label "Today's date - payment will be due on this day each month" %>
+    <%= form.text_field :paymentDue %>
+  </div>
+  
+  <div class="field">
+    <%= form.label "Number of Classes Enrolled in" %>
+    <%= form.text_field :classesEnrolled %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+  
+
 <% end %>

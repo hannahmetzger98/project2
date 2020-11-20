@@ -1,31 +1,36 @@
+<% provide(:title, "Members") %>
 <p id="notice"><%= notice %></p>
 
 <h1>Members</h1>
+<br />
 
-<table>
+<div id = "membersTable">
+<table class = "table table-hover table-striped table-bordered">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @members.each do |member| %>
       <tr>
-        <td><%= member.name %></td>
-        <td><%= member.email %></td>
-        <td><%= member.phone %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th> Name </th>
       </tr>
-    <% end %>
-  </tbody>
+  </thead>
+      
+      
+  <tbody>
+    <% @members.each do |e| %>
+    <tr>
+      <td> <%= link_to e.name, controller: "members", action: "show", id: e.id %> </td>
+    </tr>
+    <%end%>
+  </tbody>  
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Member', new_member_path %>
+<div id="signup">
+<%= link_to 'Sign Up as a New Member', new_member_path %>
+</div>
+
+<br /><br />
+<blockquote class="blockquote text-center">
+  <p class="mb-0"><i>IndyGym has always been there for me even in the hardest times. I know that every time I fall IndyGym will be there for me.</i></p>
+  <div class="blockquote-footer"> -Stacy <cite title="Source Title">(Broadripple)</cite></div>
+</blockquote>

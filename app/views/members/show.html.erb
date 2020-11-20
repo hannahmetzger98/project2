@@ -15,5 +15,20 @@
   <%= @member.phone %>
 </p>
 
+<p>
+  <strong>Membership Type:</strong>
+  <%= @member.membershipType %>
+</p>
+
+<p>
+  <strong>Payment Due:</strong>
+  <%= @member.paymentDue %>
+</p>
+
+<p>
+  <strong>Number of Classes Enrolled in:</strong>
+  <%= @member.classesEnrolled %>
+</p>
+
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>

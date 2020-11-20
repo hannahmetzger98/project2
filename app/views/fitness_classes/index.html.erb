@@ -1,25 +1,46 @@
+<% provide(:title, "Fitness Classes") %>
 <p id="notice"><%= notice %></p>
 
 <h1>Fitness Classes</h1>
 
-<table>
+<br />
+
+<div id = "fitnessClassTable">
+<table class = "table table-striped table-bordered">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th colspan="3"> Name </th>
+      <th colspan="3"> Duration </th>
+      <th colspan="3"> Signed Up </th>
     </tr>
   </thead>
+    
+    <% @fitness_classes.each do |e| %>
+    <tr>
+      <td colspan="3"> <%= e.className %> </td>
+      <td colspan="3"> <%= e.duration %> </td>
+      <td colspan="3"> <%= e.signedUp %> </td>
+    </tr>
+    <%end%>
 
-  <tbody>
-    <% @fitness_classes.each do |fitness_class| %>
-      <tr>
-        <td><%= link_to 'Show', fitness_class %></td>
-        <td><%= link_to 'Edit', edit_fitness_class_path(fitness_class) %></td>
-        <td><%= link_to 'Destroy', fitness_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
 </table>
+</div>
 
-<br>
+<br /> <br /><br />
+<div id = "picture-and-quote">
+<div class="fitness-image w-33 float-left" id = "first-pic">
+      <%= image_tag "sportsclass.png" %>
+</div>
 
-<%= link_to 'New Fitness Class', new_fitness_class_path %>
+<blockquote class="blockquote text-center w-22 float-left" id = "mary-quote">
+  <p class="mb-0"><i>I love all the classes that IndyGym offers! Monday Yoga is my fave.</i></p>
+  <div class="blockquote-footer"> -Mary <cite title="Source Title">(Fountain Square)</cite></div>
+</blockquote>
+<br />
+<!--<div class="fitness-image w-33 float-left" id = "second-pic">-->
+<!--      <!--%= image_tag "spinning.png" %>-->
+<!--</div>-->
+</div>
+
+
+<!--%= link_to 'New Fitness Class', new_fitness_class_path %-->
